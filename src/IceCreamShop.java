@@ -7,6 +7,6 @@ public class IceCreamShop {
         order.addToppings("Sprinkles", 2);
         order.addToppings("Marshmallow", 1);
 
-
+        order.generateInvoice();
     }
 }

@@ -1,3 +1,5 @@
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -53,5 +55,31 @@ public class Order {
         double cost = topping.getPrice() * quantity;
         orderDetails.add(String.format("%s - %d time(s): $%.2f", topping.getName(), quantity , cost));
         subtotal += cost;
+    }
+
+    public void generateInvoice(){
+        double tax = subtotal * TAX_RATE;
+        double total = subtotal + tax;
+
+        StringBuilder invoice = new StringBuilder("Ice Cream Shop Invoice\n");
+        for (String detail : orderDetails) {
+            invoice.append(detail).append("\n");
+        }
+
+        invoice.append(String.format("Subtotal: $%.2f\n", subtotal))
+                .append(String.format("Tax: $%.2f\n", tax))
+                .append(String.format("Total Amount Due: $%.2f", total));
+
+
+        System.out.println("===========================");
+        System.out.println(invoice);
+        System.out.println("===========================");
+
+        try(FileWriter fileWriter = new FileWriter("invoice.txt")){
+            fileWriter.write(invoice.toString());
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 }

@@ -1,0 +1,8 @@
+Ice Cream Shop Invoice
+Chocolate Fudge - 1 scoop(s): $3.00
+Mint Chocolate Chip - 2 scoop(s): $5.60
+Sprinkles - 2 time(s): $0.60
+Marshmallow - 1 time(s): $0.70
+Subtotal: $14.90
+Tax: $1.19
+Total Amount Due: $16.09
