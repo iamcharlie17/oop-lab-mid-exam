@@ -1,0 +1,17 @@
+Code Smells:
+1. Improper Naming, inventorySystem class starts with lower case
+2. Long Class: inventorySystem class contains too many responsibilities.
+3. Long Method: addProduct, processOrder, and GenerateInventoryReport methods are too long.
+4. Feature Envy: inventorySystem directly manipulate the globalInventoryData
+5. (85, 87, 91 in inventorySystem.java), Magic Numbers, in calculateFinalPrice there are many magic numbers.
+6. (range: 104 --> 130), Duplicate Code, Repeated logic for calculating total values
+7. (17 in inventorySystem), Primitive Obsession, using string for discount type rather enum
+8. (132 --> 155), Lack of Error Handling, in processOrder method there is no exceptions to handle error
+9. , God class, globalInventoryData class acting like a god class
+10. (51, 61, 62, 146), Incomplete Encapsulation, manipulating product.id directly without using setter/getter
+11. Violating encapsulation, globalInventoryData class expose all fields as public
+12. (9 --> 13 in globalInventory class), Global state, too many static fields
+13. Lack of SRP, inventorySystem and globalInventoryData are handling too many concerns.
+14. Tight coupling, inventorySystem is tightly coupled to globalInventoryData and Warehouse.
+15.
+
