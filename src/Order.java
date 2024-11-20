@@ -46,4 +46,12 @@ public class Order {
         subtotal += cost;
     }
 
+    public void addToppings(String toppingName, int quantity){
+        Topping topping = AVAILABLE_TOPPINGS.stream()
+                .filter(t -> t.getName().equalsIgnoreCase(toppingName))
+                .findFirst().orElseThrow(()-> new IllegalArgumentException("Invalid topping name!"));
+        double cost = topping.getPrice() * quantity;
+        orderDetails.add(String.format("%s - %d time(s): $%.2f", topping.getName(), quantity , cost));
+        subtotal += cost;
+    }
 }
